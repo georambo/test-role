@@ -1,0 +1,11 @@
+---
+# tasks file for nginx-test-role
+# install tasks.
+- include_tasks: install-redhat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: install-ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
+
+- include_tasks: install-debian.yml
+  when: ansible_os_family == 'Debian'
